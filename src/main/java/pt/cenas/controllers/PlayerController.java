@@ -10,6 +10,9 @@ import pt.cenas.requests.PlayerCreationRequest;
 import pt.cenas.services.PlayerService;
 import reactor.core.publisher.Mono;
 
+import javax.validation.Valid;
+import java.net.URI;
+
 @Slf4j
 @RestController
 public class PlayerController {
@@ -21,9 +24,9 @@ public class PlayerController {
     }
 
     @PostMapping(path = "/sign-up")
-    public Mono<ResponseEntity<Player>> uploadPolls(@RequestBody PlayerCreationRequest playerCreationRequest) {
+    public Mono<ResponseEntity<Player>> uploadPolls(@Valid @RequestBody PlayerCreationRequest playerCreationRequest) {
         return playerService.registerNewPlayer(playerCreationRequest)
-                .map(p -> ResponseEntity.ok().body(p))
+                .map(p -> ResponseEntity.created(URI.create("/player/" + p.getUuid())).body(p))
                 .doOnSuccess(p -> log.info("Created {}", p));
     }
 }

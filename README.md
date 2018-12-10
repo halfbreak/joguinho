@@ -1,5 +1,6 @@
 # Joguinho
 
+This is the backend repository for joguinho
 Things to decide
 - Story
 - How characters will work
@@ -9,8 +10,56 @@ Things to decide
 - How skills will work
 - Etc.
 
+## Setting
+
+Lovecraftian setting (horror, insanity)
+
 ## Characters
 The game will have characters.
+
+### Beginning
+Player can create his/her character by defining:
+ - Class
+   - Detective
+   - Explorer
+   - Scientist/Professor(Who the fuck cares)
+   - Sei lá eu ò man
+ - Pet?
+   - Wolf
+   - Raven
+   - Walking Potato (with irish accent)
+
+### Character Attributes
+
+ - Alignment
+   - Chaos
+   - Order
+ - Stats
+   - Offensive Stats
+       - Intelligence (magic)
+       - Markmanship (long range)
+       - Strength (short range)
+   - Character Stats
+       - Perception/Cunning (research)
+       - Fitness (health)
+       - Charisma (Dating)
+       - Speed
+
+### Equipment
+
+ - Armor
+    - Head
+    - Torso
+    - Leggings
+    - Hands
+    - Shoest
+    - Trinkets (rings, necklace)
+ - Weapon (Class based)
+    - Gun, Crossbow, 
+    - Staff, Wand
+    - Sword, Hammer
+
+Olha uma ideia gira para NPC: Gustav Johanssen
 
 ### Experience
 Characters should have experience.

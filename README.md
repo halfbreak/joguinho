@@ -79,3 +79,7 @@ There are at time a first startup issue due to some timings that I haven't solve
 
 `curl --header "Content-Type: application/json" --request POST --data '{"name":"xyz", "password":"banana"}'  http://localhost:8080/sign-up`
 `curl --header "Content-Type: application/json" --request POST --data '{"name":"xyz", "password":"banana"}' -u user:password  http://localhost:8080/sign-up`
+
+`curl --header "Content-Type: application/json" --request POST --data '{"name":"xyz", "password":"banana"}'  http://localhost:8080/sign-up`
+
+`curl --header "Content-Type: application/json" --request POST --data '{"name":"xyz", "type":"DETECTIVE" }' http://localhost:8080/player/<uuid of the user>/character`

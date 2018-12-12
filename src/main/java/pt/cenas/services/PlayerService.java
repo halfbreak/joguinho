@@ -8,6 +8,8 @@ import pt.cenas.requests.PlayerCreationRequest;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
+import java.util.UUID;
+
 @Service
 public class PlayerService {
 
@@ -20,7 +22,6 @@ public class PlayerService {
     }
 
     public Mono<Player> registerNewPlayer(PlayerCreationRequest playerCreationRequest) {
-
         return Mono.just(playerCreationRequest)
                 .subscribeOn(Schedulers.newSingle("sign-up-users"))
                 .map(req -> {
@@ -30,5 +31,13 @@ public class PlayerService {
                     return player;
                 })
                 .map(playerRepository::save);
+    }
+
+    public Mono<Player> findPlayerByUuid(UUID uuid) {
+        return Mono.justOrEmpty(playerRepository.findByUuid(uuid));
+    }
+
+    public Mono<Player> updatePlayer(Player player) {
+        return Mono.just(playerRepository.save(player));
     }
 }

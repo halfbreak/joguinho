@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -11,7 +13,7 @@ import java.util.UUID;
 public class Player {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     private UUID uuid = UUID.randomUUID();
@@ -22,7 +24,6 @@ public class Player {
     @NotNull
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "character_id")
-    private Character character;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "player", cascade = CascadeType.ALL)
+    private List<Character> characters = new ArrayList<>();
 }

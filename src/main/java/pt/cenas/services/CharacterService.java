@@ -21,11 +21,16 @@ public class CharacterService {
         this.playerService = playerService;
     }
 
-    public  Mono<Character> findCharacter(final UUID playerUuid, final UUID characterUuid) {
+    public Mono<Character> findCharacter(final UUID playerUuid, final UUID characterUuid) {
         return playerService.findPlayerByUuid(playerUuid)
                 .map(Player::getCharacters)
-                .flatMap(l -> Flux.fromIterable(l).filter( c -> c.getUuid().equals(characterUuid)).next());
+                .flatMap(l -> Flux.fromIterable(l).filter(c -> c.getUuid().equals(characterUuid)).next());
+    }
 
+    public Flux<Character> findAllCharacters(final UUID playerUuid) {
+        return playerService.findPlayerByUuid(playerUuid)
+                .map(Player::getCharacters)
+                .flatMapMany(Flux::fromIterable);
     }
 
     public Mono<Character> createNewCharacter(final UUID playerUuid, final CharacterCreationRequest characterCreationRequest) {
@@ -42,6 +47,7 @@ public class CharacterService {
                 })
                 .zipWith(playerService.findPlayerByUuid(playerUuid))
                 .map(tuple2 -> {
+                    tuple2.getT1().setPlayer(tuple2.getT2());
                     tuple2.getT2().getCharacters().add(tuple2.getT1());
                     return tuple2;
                 })

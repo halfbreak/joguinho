@@ -1,5 +1,6 @@
 package pt.cenas.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public abstract class Character {
 
     private UUID uuid = UUID.randomUUID();
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Player player;
 }

@@ -1,0 +1,39 @@
+----------------------------------------
+Attributes in D&D:
+	- Strength     - how hard you swing
+	- Intelligence - how smart you are [mana related      - spells]
+	- Dexterity    - how sneaky and athletic you are
+	- Wisdom       - how smart you are [awareness related - perception, insight]
+	- Constitution - how hard you can take
+	- Charisma     - how well you convince others to do what you want
+	
+Attributes in our game:
+	- Strength     - axes, swords, ...
+	- Intelligence - spells
+	- Dexterity    - guns, attacking speed
+	- Wisdom       - avoid feeling fear & good for detective tasks, if we have them
+	- Constitution - HP, recover quickly from poison, confusion, ...
+	- Charisma     - good to get clues for detective tasks, if we have them
+
+----------------------------------------
+Skills:
+	Idea: Like in DND, characters have skills. Those skills are activated depending on the 
+	random occasion/event. When the occasion arrives, the player has a "Attribute" check. 
+		(lame) Example:
+		[STRENGTH] The player beats a monsters. A heavy sword is on the floor! But a new 
+		monster appears and is ready to attack. 
+			STRENGTH check: [random number between 0-20 + Strength of the player], if the 
+			value is above XX, the player gets the sword. Otherwise, he has no time to pick it up.
+		Instead of random numbers, we can have mini-games that need a certain score to be beaten,
+		and the amount of points the player gains on them depends on their STRENGTH/whichever attribute.
+
+Some events are totally random. Others depend on the player skills, that is, the event only happens
+if the player has the skill in question.
+
+Some examples below. We can discuss if you like this idea in the next meeting.
+
+	DND: Animal Handling     - how well you control animals
+	OURS: Monster "Handling" - how well you interact with (non-attacting monsters)
+	
+	DND:  Insight - how well you detect if someone is lying
+	OURS: Insight - same, if we have people giving fake clues

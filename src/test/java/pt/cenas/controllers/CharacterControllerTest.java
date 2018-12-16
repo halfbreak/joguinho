@@ -60,7 +60,7 @@ public class CharacterControllerTest {
         character.setName("name");
         character.setUuid(storedCharacterUuid);
 
-        when(characterService.findCharacter(storedPlayerUuid, storedCharacterUuid)).thenReturn(Mono.just(character));
+        when(characterService.findCharacterByPlayerUuidAndCharacterUuid(storedPlayerUuid, storedCharacterUuid)).thenReturn(Mono.just(character));
 
         web.get().uri("player/" + storedPlayerUuid + "/character/" + storedCharacterUuid).exchange()
                 .expectStatus()

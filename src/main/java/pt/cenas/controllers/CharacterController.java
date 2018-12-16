@@ -37,7 +37,7 @@ public class CharacterController {
     public Mono<ResponseEntity<Character>> getCharacter(@PathVariable(value = "playerUuid") @NotNull UUID playerUuid,
                                                         @PathVariable(value = "characterUuid") @NotNull UUID characterUuid) {
         log.info("Finding character for {} with uuid {}", playerUuid, characterUuid);
-        return characterService.findCharacter(playerUuid, characterUuid)
+        return characterService.findCharacterByPlayerUuidAndCharacterUuid(playerUuid, characterUuid)
                 .map(ResponseEntity::ok)
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }

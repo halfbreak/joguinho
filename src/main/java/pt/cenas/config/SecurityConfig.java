@@ -27,8 +27,9 @@ public class SecurityConfig {
                 .httpBasic()
                 .and()
 
-                .authorizeExchange()
-                .anyExchange().permitAll()
+                .authorizeExchange().pathMatchers("/player/**").authenticated()
+                .and()
+                .authorizeExchange().anyExchange().permitAll()
                 .and()
 
                 .csrf().disable()
